@@ -797,6 +797,18 @@
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/ajax-form.js"></script>
     <script src="./assets/js/color.js"></script>
+    <script type="text/javascript">
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.to(".box", {
+        rotate: 360,
+        scrollTrigger: {
+          box: ".box",
+          markers: true,
+          scrub: true,
+        },
+      });
+    </script>
 
 
 
