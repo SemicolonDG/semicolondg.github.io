@@ -1,3 +1,4 @@
+
 $(function(){
 
     $(window).on('load', function () {
@@ -9,14 +10,14 @@ $(function(){
         $(document).on('click', '.icon-menu', function() {
             $('.responsive-sidebar-menu').addClass('active');
         });
-	
         $(document).on('click', '.responsive-sidebar-menu .overlay', function() {
             $('.responsive-sidebar-menu').removeClass('active');
         });
 
-        $(document).on('click', '.dmenu li .scroll-to', function() {
+        $(document).on('click', '.menu li .scroll-to', function() {
             $('.responsive-sidebar-menu').removeClass('active');
         })
+
 
         $(document).on('click', ".color-boxed a", function() {
             $(".color-boxed a").removeClass("clr-active");
@@ -27,7 +28,7 @@ $(function(){
             $(".global-color").addClass("active");
         });
 
-        $(document).on('click', ".global-color .inner .overlay, .global-color .inner .global-color-option .close-settings, .color-boxed a", function() {
+        $(document).on('click', ".global-color .inner .overlay, .global-color .inner .global-color-option .close-settings", function() {
             $(".global-color").removeClass("active");
         });
 
@@ -36,29 +37,29 @@ $(function(){
     $(window).scroll(function() {
             
         var windscroll = $(window).scrollTop();
-        // if (windscroll >= 0) {
-        //     $('.page-section').each(function(i) {
-        //         if ($(this).position().top <= windscroll - -1) {
-        //             $('.scroll-nav .scroll-to.active').removeClass('active');
-        //             $('.scroll-nav .scroll-to').eq(i).addClass('active');
-        //             $('.scroll-nav-responsive a.active').removeClass('active');
-        //             $('.scroll-nav-responsive a').eq(i).addClass('active');
-        //         }
-        //     });
+        if (windscroll >= 0) {
+            $('.page-section').each(function(i) {
+                if ($(this).position().top <= windscroll - -1) {
+                    $('.scroll-nav .scroll-to.active').removeClass('active');
+                    $('.scroll-nav .scroll-to').eq(i).addClass('active');
+                    $('.scroll-nav-responsive a.active').removeClass('active');
+                    $('.scroll-nav-responsive a').eq(i).addClass('active');
+                }
+            });
 
-        // } else {
+        } else {
 
-        //     $('.scroll-nav .scroll-to.active').removeClass('active');
-        //     $('.scroll-nav .scroll-to:first').addClass('active');
-        //     $('.scroll-nav-responsive a.active').removeClass('active');
-        //     $('.scroll-nav-responsive a:first').addClass('active');
-        // }
+            $('.scroll-nav .scroll-to.active').removeClass('active');
+            $('.scroll-nav .scroll-to:first').addClass('active');
+            $('.scroll-nav-responsive a.active').removeClass('active');
+            $('.scroll-nav-responsive a:first').addClass('active');
+        }
 
         if (windscroll >= 0) {
             $('.scroll-to-page').each(function(i) {
 
                 var wscrolldecress = windscroll + 1;
-//                 console.log(wscrolldecress);
+                // console.log(wscrolldecress);
                 if ($(this).position().top <= wscrolldecress - 0) {
                     $('.scroll-nav .scroll-to.active').removeClass('active');
                     $('.scroll-nav .scroll-to').eq(i).addClass('active');
@@ -270,29 +271,3 @@ function scroll_animations() {
     });
 }
 scroll_animations();
-
-//Hamburger Menu//
-
-$(document).on('click', ".header-area .header-right .show-menu-toggle", function() {
-            $(".header-area .header-right nav").addClass("active");
-        });
-
-        $(document).on('click', ".header-area nav .close-menu", function() {
-            $(".header-area .header-right nav").removeClass("active");
-        });
-
-
-        $('.header-area nav .nav-menu li > .toggle-dropdown').on('click', function(e) {
-            e.preventDefault();
-            $('.header-area nav .nav-menu > li').removeClass('active');
-            $(this).parent().toggleClass('active');
-        })
-        $('.header-area nav .nav-menu li > .dropdown > li > .toggle-sub-dropdown').on('click', function(e) {
-            e.preventDefault();
-            $('.header-area nav .nav-menu > .dropdown > li').removeClass('active');
-            $(this).parent().toggleClass('active');
-        })
-
-
-
-

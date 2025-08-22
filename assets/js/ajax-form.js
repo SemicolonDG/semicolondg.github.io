@@ -54,7 +54,7 @@
         const email = document.getElementById("email");
         const subject = document.getElementById("subject");
 
-        if (!fullName.value || !email.value || !subject.value) {
+        if (!fullName.value || !email.value) {
             message.classList.add('show');
             fullName.classList.add("invalid");
             console.log('false');
